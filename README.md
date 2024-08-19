@@ -24,3 +24,6 @@ git clone https://github.com/keanteng/einvoicer
 
 npm run dev
 ```
+
+## Roadmap
+- Mobile view yet to be optimized
