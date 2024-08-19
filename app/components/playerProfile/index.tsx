@@ -11,7 +11,7 @@ import {
 
 export default function PlayerProfile() {
     return (
-        <Box width="550px" className='shadow-xl'>
+        <Box width={{lg: "550px", md: "550px", xs: "200px", sm: "200px"}} className='shadow-xl'>
             <Card>
                 <Box className='p-3'>
                     <Box>

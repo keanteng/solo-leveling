@@ -5,9 +5,6 @@ import HunterCard from "@/app/components/hunterCard";
 import { motion } from 'framer-motion';
 import {
     Flex,
-    Slider,
-    Box,
-    Text,
     Heading
 } from '@radix-ui/themes'
 
@@ -19,7 +16,9 @@ export default function Profile() {
         height="100vh"
         align="center"
         gap="9"
-        justify="center"
+        justify={{md: "center", lg: "center", xl: "center"}}
+        direction={{initial: "column", xs: "column", sm: "column", md: "row"}}
+        ml={{sm: "5", xs: "5"}}
         >   
         <motion.div
             initial={{ opacity: 0, x: -150 }}
