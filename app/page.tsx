@@ -1,113 +1,117 @@
-import Image from "next/image";
+'use client';
+
+import {
+  Text,
+  Box,
+  Heading,
+  Flex,
+  Card,
+  Blockquote,
+  Quote,
+  Tabs,
+  Avatar,
+} from '@radix-ui/themes';
+import { motion } from 'framer-motion';
 
 export default function Home() {
+  const landing_text = "Shall Thy Be Spared, Worship God, Praise God and Prove Thy Faith.".split(" ");
+  const players = [
+    {
+      name: "Jinwoo",
+      message: "Let's get stronger together!",
+      avatar: 'https://64.media.tumblr.com/7c758a838962a8d187c6d45016cd58d3/cd0cfa06979422e5-53/s1280x1920/5d7e91a510d832338c246886eaf0e42db7ebe7c0.jpg',
+    },
+    {
+      name: "Hae In",
+      message: "Don't be late for the training!",
+      avatar: "https://64.media.tumblr.com/fec2ecd32a2bdbac13abaa08eeb8207b/e540faf1728a9f5c-e5/s1280x1920/c70213001330dee61462459d6acb3221d8ea4a6c.jpg",
+    },
+  ]
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Box 
+      height="1500px" 
+      width="100vw" 
+      pt={{md: "75px", initial: "125px"}} 
+    >
+      <Box width={{md: "75%", initial: "80%"}} pl={{md: "7", initial: "5"}}>
+        <Heading size={{md: "9", initial: "8"}}>
+        {landing_text.map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: index * 0.3 }}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+            {letter}{" "}
+          </motion.span>
+        ))}
+        </Heading>
+      </Box>
+      
+      <Box width={{md: "70%", initial: "90%"}} pl={{md: "7", initial: "5"}}>
+        <Blockquote color='gray' highContrast mt="6">
+          <Quote>
+          Destroy Everything. That Is The Only Mission Bestowed Upon Us.
+          </Quote>
+        </Blockquote>
+      </Box>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <Tabs.Root defaultValue="account" className="w-9/12 pt-8 pl-8">
+        <Tabs.List color='gray' highContrast>
+          <Tabs.Trigger value="account">Build</Tabs.Trigger>
+          <Tabs.Trigger value="documents">Features</Tabs.Trigger>
+        </Tabs.List>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <Box as='div' pt="3">
+          <Tabs.Content value="account">
+            <Text>
+                The site is powered by Next.js, Radix UI, and Framer Motion to 
+                give you the experience of using System and become a Player as in the Manhwa Solo-Leveling 🔥
+            </Text>
+          </Tabs.Content>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <Tabs.Content value="documents">
+            <Text>
+                You can play around with your player profile 🧑‍🍼, and see the stats 📊 of your player.
+                Check the notifications 🔔 to learn more about the game. Also, go and buy some cool items 💰 from the shop.
+              
+              </Text>
+          </Tabs.Content>
+        </Box>
+      </Tabs.Root>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Flex direction={{md: "row", initial: "column"}} gap="3" mt="6" pl="6">
+        {players.map((player, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 , y: 10}}
+            transition={{ duration: 2, ease: "easeInOut", delay: index * 1 }}
+          >
+            <Box maxWidth="280px" className='shadow-lg'>
+              <Card key={index} className="mb-4">
+                <Flex gap="3" align="center">
+                  <Avatar
+                    size="3"
+                    src={player.avatar}
+                    radius="full"
+                    fallback="F"
+                  />
+                  <Box>
+                    <Text as="div" size="2" weight="bold">
+                      {player.name}
+                    </Text>
+                    <Text as="div" size="2" color="gray">
+                      {player.message}
+                    </Text>
+                  </Box>
+                </Flex>
+              </Card>
+            </Box>
+            </motion.div>
+        ))}
+      </Flex>
+    </Box>
   );
 }
