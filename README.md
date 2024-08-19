@@ -9,7 +9,7 @@
 A Solo-Leveling system website powered by NextJS, Radix UI and Framer Motion. Play around with the site to get a feel of being a Player/Hunter in the real world! 
 
 ## Live Demo
-
+https://solo-leveling-ne2ev5wdj-keantengs-projects.vercel.app/
 
 ## Preview
 ![alt text](image.png)
